@@ -1,0 +1,81 @@
+﻿<Window x:Class="TimeManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TimeManagement"
+        mc:Ignorable="d"
+        Title="Time Management Shcedule" Height="450" Width="800">
+
+
+    <Grid>
+        <!--the XAML code for the columns and rows as displayed-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <!--The XAML code for the text blocks used to ask for the users input-->
+        <TextBlock Grid.Column="1" Grid.Row="1" Margin="5" TextWrapping="Wrap" Text="Code" FontWeight="Bold" FontSize="16" />
+
+        <TextBlock Grid.Column="1" Grid.Row="2" Margin="5" TextWrapping="Wrap" Text="Name" FontWeight="Bold" FontSize="16"/>
+        <TextBlock Grid.Column="1" Grid.Row="3" Margin="5" TextWrapping="Wrap" Text="Number of credits" FontWeight="Bold" FontSize="16"/>
+        <TextBlock Grid.Column="1" Grid.Row="4" Margin="5" TextWrapping="Wrap" Text="Class hours per week"  FontWeight="Bold" FontSize="16"/>
+        <TextBlock Grid.Column="1" Grid.Row="5" Margin="5" TextWrapping="Wrap" Text="Number of weeks"  FontWeight="Bold" FontSize="16"/>
+        <TextBlock Grid.Column="1" Grid.Row="6" Margin="5" TextWrapping="Wrap" Text="Start date"  FontWeight="Bold" FontSize="16"/>
+        <TextBlock Grid.Column="1" Grid.Row="8" Text="Module Code" Margin="5,5,5,104" FontSize="16" FontWeight="Bold"/>
+
+        <!--The XAML code for the text boxs used for the user to type their answer into-->
+        <TextBox Grid.Column="2" Grid.Row="1" x:Name="txtcode" Margin="5" TextWrapping="Wrap" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <TextBox Grid.Column="2" Grid.Row="2" x:Name="txtname" Margin="5" TextWrapping="Wrap" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox Grid.Column="2" Grid.Row="3" x:Name="txtnumberofcredits" Margin="5" TextWrapping="Wrap" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox Grid.Column="2" Grid.Row="4" x:Name="txtclasshoursperweek" Margin="5" TextWrapping="Wrap" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox Grid.Column="2" Grid.Row="5" x:Name="txtnumberofweeks" Margin="5" TextWrapping="Wrap" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <!--The XAML code for the buttons used to allow the user to clear or continue or search-->
+        <Button Grid.Column="2" Grid.Row="7" Content="Add"  Margin="5" FontSize="16" FontWeight="Bold" Click="Continue"/>
+        <Button Grid.Column="1" Grid.Row="7" Content="Clear"  Margin="5" FontSize="16" FontWeight="Bold" Click="Clear"/>
+        <Button Grid.Column="2" Grid.Row="8" Content="Search" Margin="5,39,5,0" FontSize="16" FontWeight="Bold" Click="Search" Height="26" VerticalAlignment="Top"/>
+
+        <!--The XAML code for a list view which is used to display the user's information-->
+        <ListView x:Name="rec" Grid.Column="3"  d:ItemsSource="{d:SampleData ItemCount=6}" Margin="120,5,5,195" Grid.RowSpan="25" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <DatePicker Name="dp" Grid.Column="2" HorizontalAlignment="Left" Margin="18,17,0,5" Grid.Row="6"/>
+        <TextBlock Grid.Column="3" Grid.Row="8" Margin="131,16,175,78" TextWrapping="Wrap" Text="Certain date"  FontWeight="Bold" FontSize="16"/>
+        <DatePicker x:Name="dpCertainDate" Grid.Column="3" HorizontalAlignment="Left" Margin="293,14,0,92" Grid.Row="8"/>
+        <TextBlock Grid.Column="3" Grid.Row="8" Text="Hours spent" Margin="134,56,208,59" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="txtHoursSpent" Grid.Column="3" Grid.Row="8" Margin="293,0,0,0" TextWrapping="Wrap" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Button Grid.Column="3" Grid.Row="8" Content="Save Hours" Margin="233,97,110,0" FontSize="16" FontWeight="Bold" Click="SaveHours" Height="26" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboSearch" Width="120" Grid.Column="2" Margin="0,10,10,103" Grid.Row="8"/>
+
+
+
+
+
+    </Grid>
+</Window>
